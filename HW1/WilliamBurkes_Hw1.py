@@ -2,7 +2,6 @@
 #CSC424 Programming Assignment 1
 #I have obtained this code from my prior knowledge and help from the internet. No code was copy pasted.
 
-
 import math;
 import string;
 longwords = []
