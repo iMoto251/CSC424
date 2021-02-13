@@ -1,12 +1,11 @@
 import math;
 import string;
 longwords = []
+sorteddict = []
 
 def getwords():
     file1 = open('hw1Input.txt', 'r')
     Lines = file1.readlines()
-
-
     for line in Lines:
         if line.strip():
             for a in line:
@@ -20,15 +19,16 @@ def getwords():
     return longwords
 
 def writedictionary(longwords):
-    file2 = open('hw1Output.txt', 'w')
-    sorteddict = []
     for x in range(len(longwords)):
         try:
             sorteddict.append((longwords[x][-1].lower() + ": " + longwords[x][-2].lower() + ", " + longwords[x][-3].lower() + ", " + longwords[x][-4].lower() + ", " + longwords[x][-5].lower() + ", " + longwords[x][-6].lower()))
         except IndexError:
             pass
         continue
+    return sorteddict
 
+def sortdictionary(sorteddict):
+    file2 = open('hw1Output.txt', 'w')
     sorteddict.sort()
     #print sorteddict
     for y in range(len(sorteddict)):
@@ -40,10 +40,9 @@ def writedictionary(longwords):
 
     file2.close()
 
-
 def main():
     thedict = getwords()
-    writedictionary(thedict)
+    sortdictionary(writedictionary(thedict))
 
 if __name__ == '__main__':
     import sys;
